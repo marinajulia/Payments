@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "//aIRLmLR8uQv4nHqZBSc6Y4FxIyUlJ3KaAEKZhwVUQ=",
-  "Source": "WeatherReportPublisher",
-  "BasePath": "_content/WeatherReportPublisher",
+  "Hash": "6IDKOgrzsqLNbgjveirVIJnhUG0bNgKqvT2Un2XDxYA=",
+  "Source": "WeatherReport.Api",
+  "BasePath": "_content/WeatherReport.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

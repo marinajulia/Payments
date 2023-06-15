@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReportPublisher\\WeatherReportPublisher.csproj": {}
+    "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReport.SharedKernel\\WeatherReport.SharedKernel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReportPublisher\\WeatherReportPublisher.csproj": {
+    "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReport.SharedKernel\\WeatherReport.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReportPublisher\\WeatherReportPublisher.csproj",
-        "projectName": "WeatherReportPublisher",
-        "projectPath": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReportPublisher\\WeatherReportPublisher.csproj",
+        "projectUniqueName": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReport.SharedKernel\\WeatherReport.SharedKernel.csproj",
+        "projectName": "WeatherReport.SharedKernel",
+        "projectPath": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReport.SharedKernel\\WeatherReport.SharedKernel.csproj",
         "packagesPath": "C:\\Users\\Marina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReportPublisher\\obj\\",
+        "outputPath": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\WeatherReportPublisher\\WeatherReport.SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,9 +44,27 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "System.Diagnostics.Tools": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -62,9 +79,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
