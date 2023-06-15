@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "//aIRLmLR8uQv4nHqZBSc6Y4FxIyUlJ3KaAEKZhwVUQ=",
+  "Source": "WeatherReportPublisher",
+  "BasePath": "_content/WeatherReportPublisher",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
