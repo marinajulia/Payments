@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherReport.Domain.Service.User
 {
-    internal class UserService
+    public class UserService : IUserService
     {
     }
 }
