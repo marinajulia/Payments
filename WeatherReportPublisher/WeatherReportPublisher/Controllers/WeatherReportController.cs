@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WeatherReport.Domain.Service.WeatherReport;
 using WeatherReport.Domain.Service.WeatherReport.Entities;
 
@@ -25,12 +26,11 @@ namespace WeatherReport.Api.Controllers
                     response.EnsureSuccessStatusCode();
 
                     string responseBody = await response.Content.ReadAsStringAsync();
-                    //var teste = new WeatherReportEntity()
-                    //{
-                    //    Id = 1
-                    //};
-                    //_weatherReportService.PostWeather(teste);
 
+                    var objeto = JsonConvert.DeserializeObject<WeatherReportEntity>(responseBody);
+
+                    if (objeto != null)
+                        _weatherReportService.PostWeather(objeto);
 
                     return Ok(responseBody);
                 }
