@@ -7,7 +7,7 @@ namespace WeatherReport.Infra.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-8024PRG\SERVIDOR;Initial Catalog=Alunos;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=MARINA\SQLEXPRESS;Initial Catalog=Alunos;Integrated Security=True;TrustServerCertificate=True");
         }
         public DbSet<UserEntity> User { get; set; }
 
