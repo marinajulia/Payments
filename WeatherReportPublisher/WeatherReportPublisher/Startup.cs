@@ -1,5 +1,10 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 using WeatherReport.Api.Infra;
+using WeatherReport.Domain.Service.User;
+using WeatherReport.Domain.Token;
 
 namespace WeatherReport.Api
 {
@@ -19,6 +24,39 @@ namespace WeatherReport.Api
             services.AddSwaggerGen();
 
             services.Resolve();
+
+            var key = Encoding.ASCII.GetBytes(Settings.Secret);
+
+            services.AddAuthentication(x => {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x => {
+                x.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context => {
+                        var allClaims = context.Principal.Claims;
+                        var authService = context.HttpContext.RequestServices.GetRequiredService<IUserService>();
+                        var userId = int.Parse((context.Principal.Identity.Name));
+                        var tokenAuth = allClaims.FirstOrDefault(a => a.Type == ClaimTypes.Authentication)?.Value;
+                        var user = authService.Allow(userId);
+                        if (!user)
+                            context.Fail("Unauthorized");
+
+                        return Task.CompletedTask;
+                    }
+                };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+
+            });
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)

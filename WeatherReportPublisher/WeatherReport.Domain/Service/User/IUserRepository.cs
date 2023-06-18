@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WeatherReport.Domain.Service.User.Entities;
 
 namespace WeatherReport.Domain.Service.User
 {
     public interface IUserRepository
     {
+        UserEntity GetById(int id);
+        UserEntity Post(UserEntity user);
     }
 }

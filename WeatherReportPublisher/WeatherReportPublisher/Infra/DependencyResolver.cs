@@ -5,6 +5,7 @@ using WeatherReport.Domain.Service.WeatherReport;
 using WeatherReport.Infra.Data;
 using WeatherReport.Infra.Repositories.User;
 using WeatherReport.Infra.Repositories.WeatherReport;
+using WeatherReport.SharedKernel.Utils.Notifications;
 
 namespace WeatherReport.Api.Infra
 {
@@ -12,15 +13,15 @@ namespace WeatherReport.Api.Infra
     {
         public static void Resolve(this IServiceCollection services)
         {
-            //var mappingConfig = new MapperConfiguration(m =>
-            //{
-            //    m.AddProfile(new AutoMapperProfile());
-            //});
+            var mappingConfig = new MapperConfiguration(m =>
+            {
+                m.AddProfile(new AutoMapperProfile());
+            });
 
-            //var mapper = mappingConfig.CreateMapper();
-            //services.AddSingleton(mapper);
+            var mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
-            //services.AddDbContext<ApplicationContext>();
+            services.AddDbContext<ApplicationContext>();
 
             Context(services);
             Repositories(services);
@@ -39,6 +40,7 @@ namespace WeatherReport.Api.Infra
 
         public static void Services(IServiceCollection services)
         {
+            services.AddScoped<INotification, Notification>();
             services.AddScoped<IWeatherReportService, WeatherReportService>();
             services.AddScoped<IUserService, UserService>();
         }

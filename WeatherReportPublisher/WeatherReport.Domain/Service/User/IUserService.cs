@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WeatherReport.Domain.Service.User.Dto;
 
 namespace WeatherReport.Domain.Service.User
 {
     public interface IUserService
     {
+        UserDto Post(UserDto userDto);
+        bool Allow(int idUser);
     }
 }
