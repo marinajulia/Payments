@@ -3,12 +3,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WeatherReport.Domain.Service.User.Dto;
+using WeatherReport.Domain.Service.User.Entities;
 
 namespace WeatherReport.Domain.Token
 {
     public static class TokenService
     {
-        public static string GenerateToken(UserDto user)
+        public static string GenerateToken(UserEntity user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
