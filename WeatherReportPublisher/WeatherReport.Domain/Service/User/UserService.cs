@@ -33,7 +33,7 @@ namespace WeatherReport.Domain.Service.User
             return true;
         }
 
-        public UserDto Post(UserDto userDto)
+        public UserDto PostRegister(UserDto userDto)
         {
             if (string.IsNullOrEmpty(userDto.Name))
                 return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.FieldNameEmpty));
@@ -49,13 +49,68 @@ namespace WeatherReport.Domain.Service.User
 
             //conferir de já está cadastrado
 
-            var userEntity = mapper.Map<UserEntity>(userDto); 
+            var userEntity = mapper.Map<UserEntity>(userDto);
 
-            var userPost = _userRepository.Post(userEntity);
+            var userPost = _userRepository.PostRegister(userEntity);
 
             var userDtoModel = mapper.Map<UserDto>(userPost);
 
             return userDtoModel;
+        }
+
+        public IEnumerable<UserDto> Get()
+        {
+            var userEntities = _userRepository.Get();
+            List<UserDto> userDtos = new List<UserDto>();
+
+            if (userEntities != null)
+            {
+                foreach (var entity in userEntities)
+                {
+                    var userDto = mapper.Map<UserDto>(entity);
+                    userDtos.Add(userDto);
+                }
+
+                return userDtos;
+            }
+
+            return null;
+        }
+
+        public UserDto GetById(int id)
+        {
+            var usuario = _userRepository.GetById(id);
+
+            if (usuario == null)
+                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.CouldNotFind));
+
+            return mapper.Map<UserDto>(usuario);
+
+        }
+
+        public bool PostBlock(UserDto user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool PostUnlock(UserDto user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public UserDto PostLogin(UserEntity user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool PutChangeData(UserDto user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool PutChangePassword(UserDto user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

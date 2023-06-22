@@ -18,5 +18,8 @@ namespace WeatherReport.SharedKernel.Utils.Enums
 
         [Description("Oops.. Incorrect username or password")]
         IncorrectUsernameOrPassword,
+
+        [Description("Oops.. Could not find this user")]
+        CouldNotFind
     }
 }
