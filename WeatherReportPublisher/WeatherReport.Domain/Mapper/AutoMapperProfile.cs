@@ -10,19 +10,11 @@ namespace WeatherReport.Domain.Mapper
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<UserEntity, UserDto>()
-                    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-                    .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                    .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
-                    .ForMember(dest => dest.IdCity, opt => opt.MapFrom(src => src.IdCity));
+                cfg.CreateMap<UserEntity, UserDto>();
 
-                cfg.CreateMap<UserDto, UserEntity>()
-                    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-                    .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
-                    .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
-                    .ForMember(dest => dest.IdCity, opt => opt.MapFrom(src => src.IdCity));
+                cfg.CreateMap<UserLoginDto, UserDto>();
+
+                cfg.CreateMap<UserDto, UserEntity>();
             });
 
             IMapper mapper = config.CreateMapper();

@@ -32,12 +32,17 @@ namespace WeatherReport.Infra.Repositories.User
             }
         }
 
-        public bool PostBlock(UserDto user)
+        public UserEntity GetUser(string email, string password)
         {
-            throw new NotImplementedException();
+            using (var context = new ApplicationContext())
+            {
+                var user = context.User.FirstOrDefault(x => x.Email == email &&
+                x.Password == PasswordService.Encrypt(password));
+                return user;
+            }
         }
 
-        public UserDto PostLogin(UserEntity user)
+        public bool PostBlock(UserDto user)
         {
             throw new NotImplementedException();
         }

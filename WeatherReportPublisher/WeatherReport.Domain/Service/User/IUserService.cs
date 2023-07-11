@@ -1,6 +1,4 @@
 ﻿using WeatherReport.Domain.Service.User.Dto;
-using WeatherReport.Domain.Service.User.Entities;
-
 namespace WeatherReport.Domain.Service.User
 {
     public interface IUserService
@@ -11,7 +9,7 @@ namespace WeatherReport.Domain.Service.User
         UserDto GetById(int id);
         bool PostBlock(UserDto user);
         bool PostUnlock(UserDto user);
-        UserDto PostLogin(UserEntity user);
+        UserDto PostLogin(UserLoginDto user);
         bool PutChangeData(UserDto user);
         bool PutChangePassword(UserDto user);
     }

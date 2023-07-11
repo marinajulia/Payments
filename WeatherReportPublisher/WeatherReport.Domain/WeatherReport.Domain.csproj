@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\User\Dto\" />
     <Folder Include="Service\WeatherReport\Dto\" />
   </ItemGroup>
 

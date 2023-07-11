@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WeatherReport.Domain.Mapper;
 using WeatherReport.Domain.Service.User;
 using WeatherReport.Domain.Service.User.Dto;
+using WeatherReport.Domain.Service.User.Entities;
+using WeatherReport.Domain.Token;
 using WeatherReport.SharedKernel.Utils.Notifications;
 
 namespace WeatherReport.Api.Controllers.User
@@ -12,6 +16,7 @@ namespace WeatherReport.Api.Controllers.User
     {
         private readonly INotification _notification;
         private readonly IUserService _userService;
+        IMapper _mapper = AutoMapperProfile.Initialize();
 
         public UserController(INotification notification, IUserService userService)
         {
@@ -51,6 +56,20 @@ namespace WeatherReport.Api.Controllers.User
                 return BadRequest(_notification.GetNotifications());
 
             return Ok(response);
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult PostLogin(UserLoginDto model)
+        {
+            var user = _userService.PostLogin(model);
+            if (user == null)
+                return BadRequest(_notification.GetNotifications());
+
+           var userEntity = _mapper.Map<UserEntity>(user);
+            var token = TokenService.GenerateToken(userEntity);
+
+            return Ok(token);
         }
     }
 }

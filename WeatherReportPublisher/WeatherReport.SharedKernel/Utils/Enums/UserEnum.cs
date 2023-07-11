@@ -20,6 +20,10 @@ namespace WeatherReport.SharedKernel.Utils.Enums
         IncorrectUsernameOrPassword,
 
         [Description("Oops.. Could not find this user")]
-        CouldNotFind
+        CouldNotFind,
+
+        [Description("Oops.. There are fields empty fields")]
+        EmptyFields,
+
     }
 }

@@ -10,7 +10,7 @@ namespace WeatherReport.Domain.Service.User
 {
     public class UserService : IUserService
     {
-        IMapper mapper = AutoMapperProfile.Initialize();
+        IMapper _mapper = AutoMapperProfile.Initialize();
         private readonly INotification _notification;
         private readonly IUserRepository _userRepository;
         private readonly UserLoggedData _userLoggedData;
@@ -49,11 +49,11 @@ namespace WeatherReport.Domain.Service.User
 
             //conferir de já está cadastrado
 
-            var userEntity = mapper.Map<UserEntity>(userDto);
+            var userEntity = _mapper.Map<UserEntity>(userDto);
 
             var userPost = _userRepository.PostRegister(userEntity);
 
-            var userDtoModel = mapper.Map<UserDto>(userPost);
+            var userDtoModel = _mapper.Map<UserDto>(userPost);
 
             return userDtoModel;
         }
@@ -67,7 +67,7 @@ namespace WeatherReport.Domain.Service.User
             {
                 foreach (var entity in userEntities)
                 {
-                    var userDto = mapper.Map<UserDto>(entity);
+                    var userDto = _mapper.Map<UserDto>(entity);
                     userDtos.Add(userDto);
                 }
 
@@ -84,7 +84,7 @@ namespace WeatherReport.Domain.Service.User
             if (usuario == null)
                 return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.CouldNotFind));
 
-            return mapper.Map<UserDto>(usuario);
+            return _mapper.Map<UserDto>(usuario);
 
         }
 
@@ -98,9 +98,16 @@ namespace WeatherReport.Domain.Service.User
             throw new NotImplementedException();
         }
 
-        public UserDto PostLogin(UserEntity user)
+        public UserDto PostLogin(UserLoginDto user)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(user.Password) || string.IsNullOrEmpty(user.Email))
+                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.EmptyFields));
+            
+            var userData = _userRepository.GetUser(user.Email, user.Password);
+            if (userData == null)
+                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.IncorrectUsernameOrPassword));
+
+            return _mapper.Map<UserDto>(userData);
         }
 
         public bool PutChangeData(UserDto user)

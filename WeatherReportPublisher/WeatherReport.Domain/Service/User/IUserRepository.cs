@@ -11,8 +11,8 @@ namespace WeatherReport.Domain.Service.User
         IEnumerable<UserEntity> Get();
         bool PostBlock(UserDto user);
         bool PostUnlock(UserDto user);
-        UserDto PostLogin(UserEntity user);
         bool PutChangeData(UserDto user);
         bool PutChangePassword(UserDto user);
+        UserEntity GetUser(string email, string password);
     }
 }
