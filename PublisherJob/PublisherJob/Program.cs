@@ -1,32 +1,36 @@
 ﻿using Quartz.Impl;
 using Quartz;
 using PublisherJob.Job;
+using Microsoft.AspNetCore.Builder;
+using PublisherJob;
 
-class Program
-{
-    static async Task Main(string[] args)
-    {
-        var schedulerFactory = new StdSchedulerFactory();
-        var scheduler = await schedulerFactory.GetScheduler();
-        await scheduler.Start();
+var builder = WebApplication.CreateBuilder(args);
 
-        var jobDetail = JobBuilder.Create<Job>()
-            .WithIdentity("Job", "Jobs")
-            .Build();
+var startup = new Startup(builder.Configuration);
+startup.ConfigureServices(builder.Services);
 
-        var trigger = TriggerBuilder.Create()
-            .WithIdentity("Trigger", "Triggers")
-            .StartNow()
-            .WithSimpleSchedule(x => x
-                .WithIntervalInSeconds(10) 
-                .RepeatForever())
-            .Build();
+var app = builder.Build();
 
-        await scheduler.ScheduleJob(jobDetail, trigger);
+var schedulerFactory = new StdSchedulerFactory();
+var scheduler = await schedulerFactory.GetScheduler();
+await scheduler.Start();
 
-        Console.WriteLine("Job agendado. Pressione qualquer tecla para sair.");
-        Console.ReadKey();
+var jobDetail = JobBuilder.Create<Job>()
+    .WithIdentity("Job", "Jobs")
+    .Build();
 
-        await scheduler.Shutdown();
-    }
-}
+var trigger = TriggerBuilder.Create()
+    .WithIdentity("Trigger", "Triggers")
+    .StartNow()
+    .WithSimpleSchedule(x => x
+        .WithIntervalInSeconds(10)
+        .RepeatForever())
+    .Build();
+
+await scheduler.ScheduleJob(jobDetail, trigger);
+
+Console.WriteLine("Job agendado. Pressione qualquer tecla para sair.");
+Console.ReadKey();
+
+await scheduler.Shutdown();
+app.Run();
