@@ -1,14 +1,36 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿//using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.Hosting;
+//using PublisherJob.IoC;
+//using PublisherJob.Job;
+
+//IHostBuilder builder = Host.CreateDefaultBuilder(args)
+//    .ConfigureServices(services =>
+//    {
+//        services.AddHostedService<Job>();
+//        services.Resolve();
+//    });
+
+//IHost host = builder.Build();
+//host.Run();
+
 using Microsoft.Extensions.Hosting;
+using Quartz;
 using PublisherJob.IoC;
 using PublisherJob.Job;
 
-IHostBuilder builder = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
+IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((hostContext, services) =>
     {
-        services.AddHostedService<Job>();
-        services.Resolve();
-    });
+        services.AddQuartz(q =>
+        {
+            q.UseMicrosoftDependencyInjectionScopedJobFactory();
+            q.AddJobAndTrigger<Job>(hostContext.Configuration);
+        });
 
-IHost host = builder.Build();
-host.Run();
+        services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
+        services.Resolve();
+    })
+    .UseWindowsService()
+    .Build();
+
+await host.RunAsync();

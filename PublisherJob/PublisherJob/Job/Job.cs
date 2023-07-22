@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using PublisherJobInfra.Infra.Interfaces.User;
+using Quartz;
 
 namespace PublisherJob.Job
 {
-    public class Job : BackgroundService
+    [DisallowConcurrentExecution]
+    public class Job : IJob
     {
         private readonly ILogger<Job> _logger;
         private readonly IUserRepository _userRepository;
@@ -15,22 +16,13 @@ namespace PublisherJob.Job
             _userRepository = userRepository;
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        public Task Execute(IJobExecutionContext context)
         {
-            _logger.LogInformation("O serviço está iniciando.");
+            _logger.LogInformation("Rodando: {time}", DateTimeOffset.Now);
+            var userEntities = _userRepository.Get();
+            Console.WriteLine("rodandoaq");
 
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                _logger.LogInformation("Rodando: {time}", DateTimeOffset.Now);
-
-                Console.WriteLine("caraioo");
-                var userEntities = _userRepository.Get();
-                
-                await Task.Delay(1000, stoppingToken);
-            }
-
-            _logger.LogInformation("O serviço está parando.");
+            return Task.CompletedTask;
         }
     }
 }
-//0 0 * ***   

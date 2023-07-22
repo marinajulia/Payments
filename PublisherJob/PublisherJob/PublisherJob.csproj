@@ -23,6 +23,9 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
 	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
 	  <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.0" />
+	  <PackageReference Include="Quartz" Version="3.3.3" />
+	  <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.3.3" />
+	  <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
   </ItemGroup>
 
   <ItemGroup>
