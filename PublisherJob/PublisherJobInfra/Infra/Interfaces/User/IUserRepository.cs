@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PublisherJobInfra.Infra.Entities;
 
 namespace PublisherJobInfra.Infra.Interfaces.User
 {
     public interface IUserRepository
     {
+        IEnumerable<UserEntity> Get();
     }
 }
