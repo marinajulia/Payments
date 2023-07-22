@@ -28,7 +28,7 @@ namespace WeatherReport.Domain.Service.User
             if (user == null)
                 return _notification.AddWithReturn<bool>(ConfigureEnum.GetEnumDescription(UserEnum.IncorrectUsernameOrPassword));
 
-            _userLoggedData.Add(user.Id);
+            _userLoggedData.Add(user.Id, user.UserProfile);
 
             return true;
         }
@@ -47,6 +47,7 @@ namespace WeatherReport.Domain.Service.User
             if (userDto.IdCity < 0)
                 return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.FieldCityEmpty));
 
+            userDto.UserProfile = UserProfileEnum.user;
             //conferir de já está cadastrado
 
             var userEntity = _mapper.Map<UserEntity>(userDto);

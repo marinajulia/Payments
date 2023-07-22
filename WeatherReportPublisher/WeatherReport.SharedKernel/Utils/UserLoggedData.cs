@@ -1,4 +1,6 @@
-﻿namespace WeatherReport.SharedKernel.Utils
+﻿using WeatherReport.SharedKernel.Utils.Enums;
+
+namespace WeatherReport.SharedKernel.Utils
 {
     public class UserLoggedData
     {
@@ -8,11 +10,12 @@
             _data = new List<DataToken>();
         }
 
-        public void Add(int idUsuario)
+        public void Add(int idUsuario, UserProfileEnum userProfile)
         {
             _data.Add(new DataToken
             {
-                Id_Usuario = idUsuario
+                Id_Usuario = idUsuario,
+                UserProfile = userProfile,
             });
         }
 
@@ -25,5 +28,6 @@
     public class DataToken
     {
         public int Id_Usuario { get; set; }
+        public UserProfileEnum UserProfile { get; set; }
     }
 }

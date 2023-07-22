@@ -18,6 +18,7 @@ namespace WeatherReport.Domain.Token
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
                     new Claim(ClaimTypes.Email, user.Email.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),

@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherReport.Api", "WeatherReportPublisher\WeatherReport.Api.csproj", "{952DB8DA-B115-47AD-8B1D-45A43304FF05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherReport.Domain", "WeatherReport.Domain\WeatherReport.Domain.csproj", "{1DBEB18F-B775-46CC-9C8D-1576BBD1570F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherReport.Infra", "WeatherReport.Infra\WeatherReport.Infra.csproj", "{2865FD9A-82EB-4C2C-B4F2-4A42B2AA4B97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherReport.SharedKernel", "WeatherReport.SharedKernel\WeatherReport.SharedKernel.csproj", "{8DC2FE52-6FE7-4729-A395-9B476E85F4A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{D642604D-BC77-4EC6-9422-9D3FE2FF563F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{952DB8DA-B115-47AD-8B1D-45A43304FF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952DB8DA-B115-47AD-8B1D-45A43304FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952DB8DA-B115-47AD-8B1D-45A43304FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952DB8DA-B115-47AD-8B1D-45A43304FF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DBEB18F-B775-46CC-9C8D-1576BBD1570F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBEB18F-B775-46CC-9C8D-1576BBD1570F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBEB18F-B775-46CC-9C8D-1576BBD1570F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBEB18F-B775-46CC-9C8D-1576BBD1570F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2865FD9A-82EB-4C2C-B4F2-4A42B2AA4B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2865FD9A-82EB-4C2C-B4F2-4A42B2AA4B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2865FD9A-82EB-4C2C-B4F2-4A42B2AA4B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2865FD9A-82EB-4C2C-B4F2-4A42B2AA4B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC2FE52-6FE7-4729-A395-9B476E85F4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC2FE52-6FE7-4729-A395-9B476E85F4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC2FE52-6FE7-4729-A395-9B476E85F4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC2FE52-6FE7-4729-A395-9B476E85F4A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52D44648-2605-45B6-A745-82DCD0C7DDA0}
+	EndGlobalSection
+EndGlobal

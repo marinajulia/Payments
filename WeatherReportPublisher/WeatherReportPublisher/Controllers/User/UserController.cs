@@ -67,7 +67,7 @@ namespace WeatherReport.Api.Controllers.User
                 return BadRequest(_notification.GetNotifications());
 
            var userEntity = _mapper.Map<UserEntity>(user);
-            var token = TokenService.GenerateToken(userEntity);
+           var token = TokenService.GenerateToken(userEntity);
 
             return Ok(token);
         }

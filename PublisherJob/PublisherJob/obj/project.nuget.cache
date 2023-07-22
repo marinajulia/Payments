@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "1doDENU3jN1xsSaSvtfGnSyYRDuYIYGATNPJDv8PFkdW6u0iTusZB+DBSPoUriC9frl3FIiNAIA8UEnnpUHpPg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Marina\\OneDrive\\Documentos\\Projetos\\WeatherReport\\PublisherJob\\PublisherJob\\PublisherJob.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marina\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.1.1\\microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\quartz\\3.6.3\\quartz.3.6.3.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Marina\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
