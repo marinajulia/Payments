@@ -2,14 +2,14 @@
 using Microsoft.Extensions.Logging;
 using PublisherJobInfra.Infra.Interfaces.User;
 
-namespace PublisherJob
+namespace PublisherJob.Job
 {
-    public class Worker : BackgroundService
+    public class Job : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
+        private readonly ILogger<Job> _logger;
         private readonly IUserRepository _userRepository;
 
-        public Worker(ILogger<Worker> logger, IUserRepository userRepository)
+        public Job(ILogger<Job> logger, IUserRepository userRepository)
         {
             _logger = logger;
             _userRepository = userRepository;
@@ -23,14 +23,14 @@ namespace PublisherJob
             {
                 _logger.LogInformation("Rodando: {time}", DateTimeOffset.Now);
 
-                //File.AppendAllText("c:\\temp\\log.txt", Environment.NewLine + $"Rodando: {DateTime.Now}");
                 Console.WriteLine("caraioo");
                 var userEntities = _userRepository.Get();
-
-                await Task.Delay(1000, stoppingToken);//1segundo
+                
+                await Task.Delay(1000, stoppingToken);
             }
 
             _logger.LogInformation("O serviço está parando.");
         }
     }
 }
+//0 0 * ***   

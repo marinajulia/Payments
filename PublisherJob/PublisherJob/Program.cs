@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PublisherJob;
 using PublisherJob.IoC;
+using PublisherJob.Job;
 
 IHostBuilder builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
-        services.AddHostedService<Worker>();
+        services.AddHostedService<Job>();
         services.Resolve();
     });
 
