@@ -1,4 +1,4 @@
-using User.Api;
+using WeatherReport.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
