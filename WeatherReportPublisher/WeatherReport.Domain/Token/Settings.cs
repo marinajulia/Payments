@@ -1,4 +1,4 @@
-﻿namespace WeatherReport.Domain.Token
+﻿namespace User.Domain.Token
 {
     public static class Settings
     {

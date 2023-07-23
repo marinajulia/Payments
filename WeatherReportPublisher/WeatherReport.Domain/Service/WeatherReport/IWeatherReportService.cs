@@ -1,7 +1,7 @@
 ﻿
-using WeatherReport.Domain.Service.WeatherReport.Entities;
+using User.Domain.Service.WeatherReport.Entities;
 
-namespace WeatherReport.Domain.Service.WeatherReport
+namespace User.Domain.Service.WeatherReport
 {
     public interface IWeatherReportService
     {

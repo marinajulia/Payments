@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WeatherReport.Domain.Service.User.Entities;
+using User.Domain.Service.User.Entities;
 
-namespace WeatherReport.Infra.Data
+namespace User.Infra.Data
 {
     public class ApplicationContext : DbContext
     {

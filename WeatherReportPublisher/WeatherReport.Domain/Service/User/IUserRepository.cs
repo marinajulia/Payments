@@ -1,7 +1,7 @@
-﻿using WeatherReport.Domain.Service.User.Dto;
-using WeatherReport.Domain.Service.User.Entities;
+﻿using User.Domain.Service.User.Dto;
+using User.Domain.Service.User.Entities;
 
-namespace WeatherReport.Domain.Service.User
+namespace User.Domain.Service.User
 {
     public interface IUserRepository
     {

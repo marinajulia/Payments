@@ -1,5 +1,6 @@
-﻿using WeatherReport.Domain.Service.User.Dto;
-namespace WeatherReport.Domain.Service.User
+﻿using User.Domain.Service.User.Dto;
+
+namespace User.Domain.Service.User
 {
     public interface IUserService
     {

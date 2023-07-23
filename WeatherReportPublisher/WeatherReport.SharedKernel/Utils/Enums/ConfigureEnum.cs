@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace WeatherReport.SharedKernel.Utils.Enums
+namespace User.SharedKernel.Utils.Enums
 {
     public static class ConfigureEnum
     {

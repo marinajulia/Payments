@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using WeatherReport.Domain.Mapper;
-using WeatherReport.Domain.Service.User;
-using WeatherReport.Domain.Service.WeatherReport;
-using WeatherReport.Infra.Data;
-using WeatherReport.Infra.Repositories.User;
-using WeatherReport.Infra.Repositories.WeatherReport;
-using WeatherReport.SharedKernel.Utils;
-using WeatherReport.SharedKernel.Utils.Notifications;
+using User.Domain.Mapper;
+using User.Domain.Service.User;
+using User.Domain.Service.WeatherReport;
+using User.Infra.Data;
+using User.Infra.Repositories.User;
+using User.Infra.Repositories.WeatherReport;
+using User.SharedKernel.Utils;
+using User.SharedKernel.Utils.Notifications;
 
-namespace WeatherReport.Api.Infra
+namespace User.Api.Infra
 {
     public static class DependencyResolver
     {

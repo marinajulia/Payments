@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WeatherReport.Domain.Common.Cryptography;
-using WeatherReport.Domain.Service.User;
-using WeatherReport.Domain.Service.User.Dto;
-using WeatherReport.Domain.Service.User.Entities;
-using WeatherReport.Infra.Data;
+using User.Domain.Common.Cryptography;
+using User.Domain.Service.User;
+using User.Domain.Service.User.Dto;
+using User.Domain.Service.User.Entities;
+using User.Infra.Data;
 
-namespace WeatherReport.Infra.Repositories.User
+namespace User.Infra.Repositories.User
 {
     public class UserRepository : IUserRepository
     {

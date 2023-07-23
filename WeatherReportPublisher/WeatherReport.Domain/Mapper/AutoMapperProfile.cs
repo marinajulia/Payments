@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using WeatherReport.Domain.Service.User.Dto;
-using WeatherReport.Domain.Service.User.Entities;
+using User.Domain.Service.User.Dto;
+using User.Domain.Service.User.Entities;
 
-namespace WeatherReport.Domain.Mapper
+namespace User.Domain.Mapper
 {
     public class AutoMapperProfile : Profile
     {

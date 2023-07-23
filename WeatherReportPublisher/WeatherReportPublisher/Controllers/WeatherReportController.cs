@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using WeatherReport.Domain.Service.WeatherReport;
-using WeatherReport.Domain.Service.WeatherReport.Entities;
+using User.Domain.Service.WeatherReport;
+using User.Domain.Service.WeatherReport.Entities;
 
-namespace WeatherReport.Api.Controllers
+namespace User.Api.Controllers
 {
     [ApiController]
     [Route("api/weatherreport")]

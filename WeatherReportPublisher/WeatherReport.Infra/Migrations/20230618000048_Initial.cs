@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WeatherReport.Infra.Migrations
+namespace User.Infra.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

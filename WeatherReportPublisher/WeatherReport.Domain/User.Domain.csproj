@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WeatherReport.SharedKernel\WeatherReport.SharedKernel.csproj" />
+    <ProjectReference Include="..\WeatherReport.SharedKernel\User.SharedServices.csproj" />
   </ItemGroup>
 
 </Project>

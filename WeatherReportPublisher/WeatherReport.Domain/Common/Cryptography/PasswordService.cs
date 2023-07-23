@@ -1,4 +1,4 @@
-﻿namespace WeatherReport.Domain.Common.Cryptography
+﻿namespace User.Domain.Common.Cryptography
 {
     public class PasswordService
     {

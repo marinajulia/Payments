@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WeatherReport.Domain.Service.WeatherReport.Entities
+﻿namespace User.Domain.Service.WeatherReport.Entities
 {
     public class WeatherReportEntity
     {

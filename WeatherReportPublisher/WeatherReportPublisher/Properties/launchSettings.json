@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WeatherReportRegister": {
+    "User": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

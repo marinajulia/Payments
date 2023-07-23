@@ -1,6 +1,6 @@
-﻿using WeatherReport.SharedKernel.Utils.Enums;
+﻿using User.SharedKernel.Utils.Enums;
 
-namespace WeatherReport.SharedKernel.Utils
+namespace User.SharedKernel.Utils
 {
     public class UserLoggedData
     {

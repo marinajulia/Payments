@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
-using WeatherReport.Domain.Service.WeatherReport;
-using WeatherReport.Domain.Service.WeatherReport.Entities;
+using User.Domain.Service.WeatherReport;
+using User.Domain.Service.WeatherReport.Entities;
 
-namespace WeatherReport.Infra.Repositories.WeatherReport
+namespace User.Infra.Repositories.WeatherReport
 {
     public class WeatherReportRepository : IWeatherReportRepository
     {

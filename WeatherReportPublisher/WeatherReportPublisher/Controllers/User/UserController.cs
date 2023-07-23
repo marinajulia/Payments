@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WeatherReport.Domain.Mapper;
-using WeatherReport.Domain.Service.User;
-using WeatherReport.Domain.Service.User.Dto;
-using WeatherReport.Domain.Service.User.Entities;
-using WeatherReport.Domain.Token;
-using WeatherReport.SharedKernel.Utils.Notifications;
+using User.Domain.Mapper;
+using User.Domain.Service.User;
+using User.Domain.Service.User.Dto;
+using User.Domain.Service.User.Entities;
+using User.Domain.Token;
+using User.SharedKernel.Utils.Notifications;
 
-namespace WeatherReport.Api.Controllers.User
+namespace User.Api.Controllers.User
 {
     [ApiController]
     [Route("api/user")]

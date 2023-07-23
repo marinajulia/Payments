@@ -1,4 +1,4 @@
-﻿namespace WeatherReport.SharedKernel.Utils.Enums
+﻿namespace User.SharedKernel.Utils.Enums
 {
     public enum UserProfileEnum
     {

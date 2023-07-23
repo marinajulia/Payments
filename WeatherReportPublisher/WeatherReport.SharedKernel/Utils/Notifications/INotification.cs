@@ -1,4 +1,4 @@
-﻿namespace WeatherReport.SharedKernel.Utils.Notifications
+﻿namespace User.SharedKernel.Utils.Notifications
 {
     public interface INotification
     {

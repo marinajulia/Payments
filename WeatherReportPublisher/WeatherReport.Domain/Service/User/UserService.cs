@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using WeatherReport.Domain.Mapper;
-using WeatherReport.Domain.Service.User.Dto;
-using WeatherReport.Domain.Service.User.Entities;
-using WeatherReport.SharedKernel.Utils;
-using WeatherReport.SharedKernel.Utils.Enums;
-using WeatherReport.SharedKernel.Utils.Notifications;
+using User.Domain.Mapper;
+using User.Domain.Service.User.Dto;
+using User.Domain.Service.User.Entities;
+using User.SharedKernel.Utils;
+using User.SharedKernel.Utils.Enums;
+using User.SharedKernel.Utils.Notifications;
 
-namespace WeatherReport.Domain.Service.User
+namespace User.Domain.Service.User
 {
     public class UserService : IUserService
     {

@@ -1,6 +1,6 @@
-﻿using WeatherReport.SharedKernel.Utils.Enums;
+﻿using User.SharedKernel.Utils.Enums;
 
-namespace WeatherReport.Domain.Service.User.Entities
+namespace User.Domain.Service.User.Entities
 {
     public class UserEntity
     {

@@ -2,11 +2,11 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
-using WeatherReport.Api.Infra;
-using WeatherReport.Domain.Service.User;
-using WeatherReport.Domain.Token;
+using User.Api.Infra;
+using User.Domain.Service.User;
+using User.Domain.Token;
 
-namespace WeatherReport.Api
+namespace User.Api
 {
     public class Startup
     {

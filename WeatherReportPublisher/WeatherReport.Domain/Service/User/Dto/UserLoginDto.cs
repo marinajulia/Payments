@@ -1,4 +1,4 @@
-﻿namespace WeatherReport.Domain.Service.User.Dto
+﻿namespace User.Domain.Service.User.Dto
 {
     public class UserLoginDto
     {
