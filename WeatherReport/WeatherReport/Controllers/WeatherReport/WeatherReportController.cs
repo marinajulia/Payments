@@ -22,17 +22,8 @@ namespace WeatherReport.Api.Controllers.WeatherReport
             {
                 try
                 {
-                    HttpResponseMessage response = await client.GetAsync($"https://brasilapi.com.br/api/cptec/v1/clima/previsao/{cityId}");
-                    response.EnsureSuccessStatusCode();
-
-                    string responseBody = await response.Content.ReadAsStringAsync();
-
-                    var objeto = JsonConvert.DeserializeObject<WeatherReportEntity>(responseBody);
-
-                    //if (objeto != null)
-                    //    _weatherReportService.PostWeather(objeto);
-
-                    return Ok(responseBody);
+                    var weatherReport = await _weatherReportService.GetWeatherReport(cityId);
+                    return Ok(weatherReport);
                 }
                 catch (HttpRequestException)
                 {
