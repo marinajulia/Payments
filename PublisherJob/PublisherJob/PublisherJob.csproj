@@ -20,6 +20,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
 	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
 	  <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.0" />
@@ -30,10 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PublisherJobInfra\PublisherJobInfra.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Service\" />
   </ItemGroup>
 
 </Project>

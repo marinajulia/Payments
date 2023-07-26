@@ -1,13 +1,9 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using PublisherJob.Service.Notification;
+using PublisherJob.Service.User;
 using PublisherJobInfra.Infra.Data;
 using PublisherJobInfra.Infra.Interfaces.User;
 using PublisherJobInfra.Infra.Repositories.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PublisherJob.IoC
 {
@@ -27,14 +23,20 @@ namespace PublisherJob.IoC
 
             Context(services);
             Repositories(services);
+            Services(services);
         }
         public static void Context(IServiceCollection services)
         {
             services.AddScoped<ApplicationContext, ApplicationContext>();
+            services.AddScoped<INotificationService, NotificationService>();
         }
         public static void Repositories(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+        }
+        public static void Services(IServiceCollection services)
+        {
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }
