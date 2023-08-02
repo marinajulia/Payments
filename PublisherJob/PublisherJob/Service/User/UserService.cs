@@ -14,10 +14,5 @@ namespace PublisherJob.Service.User
         {
             return _userRepository.Get();
         }
-
-        public void PostWeather(WeatherReportEntity weatherReport)
-        {
-            _userRepository.PostWeather(weatherReport);
-        }
     }
 }

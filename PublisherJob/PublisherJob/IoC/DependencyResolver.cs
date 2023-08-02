@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PublisherJob.Service.Notification;
 using PublisherJob.Service.User;
+using PublisherJob.Service.WeatherReport;
 using PublisherJobInfra.Infra.Data;
 using PublisherJobInfra.Infra.Interfaces.User;
+using PublisherJobInfra.Infra.Interfaces.WeatherReport;
 using PublisherJobInfra.Infra.Repositories.User;
+using PublisherJobInfra.Infra.Repositories.WeatherReport;
 
 namespace PublisherJob.IoC
 {
@@ -33,10 +36,12 @@ namespace PublisherJob.IoC
         public static void Repositories(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWeatherReportRepository, WeatherReportRepository>();
         }
         public static void Services(IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWeatherReportService, WeatherReportService>();
         }
     }
 }

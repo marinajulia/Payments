@@ -5,6 +5,5 @@ namespace PublisherJobInfra.Infra.Interfaces.User
     public interface IUserRepository
     {
         IEnumerable<UserEntity> Get();
-        void PostWeather(WeatherReportEntity weatherReport);
     }
 }
