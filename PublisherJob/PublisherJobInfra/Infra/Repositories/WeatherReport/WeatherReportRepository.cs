@@ -32,7 +32,7 @@ namespace PublisherJobInfra.Infra.Repositories.WeatherReport
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "WeatherReport1",
+                channel.QueueDeclare(queue: "WeatherReport",
                                      durable: false,
                                      exclusive: false,
                                      autoDelete: false,
@@ -43,7 +43,7 @@ namespace PublisherJobInfra.Infra.Repositories.WeatherReport
                 var body = Encoding.UTF8.GetBytes(message);
 
                 channel.BasicPublish(exchange: "",
-                                     routingKey: "WeatherRepor1t",
+                                     routingKey: "WeatherReport",
                                      basicProperties: null,
                                      body: body);
 

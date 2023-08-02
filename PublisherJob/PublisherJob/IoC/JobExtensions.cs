@@ -12,7 +12,7 @@ namespace PublisherJob.IoC
         {
             string nomeJob = typeof(T).Name;
 
-            var cronHorarioExecucao = "0/5 * * * * ?";
+            var cronHorarioExecucao = "0/10 * * * * ?";
 
             var jobKey = new JobKey(nomeJob);
             quartz.AddJob<T>(opts => opts.WithIdentity(jobKey));
@@ -24,4 +24,4 @@ namespace PublisherJob.IoC
         }
     }
 }
-//para todos os dias, testar com : "0 0 0 0 * * * *" aqui está para meia noite
+//0 6 * ** --todos os dias as 6 da manha
