@@ -29,12 +29,6 @@ namespace PublisherJob.Job
             {
                 ProcessForecasts(user);
             }
-            //TODO: fazer um for em user entities e pegar previsão da api de previsão
-            //TODO: juntar o resultado do get + previsão
-            //TODO: mandar para a api de notificação
-            //_userService.PostWeatherForecast(userEntities);
-
-            Console.WriteLine("rodandoaq");
 
             return Task.CompletedTask;
         }

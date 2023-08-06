@@ -6,7 +6,7 @@ namespace User.Domain.Service.User
     public interface IUserRepository
     {
         UserEntity GetById(int id);
-        UserEntity PostRegister(UserEntity user);
+        Task<UserEntity> PostRegister(UserEntity user);
         bool Allow(int idUser);
         IEnumerable<UserEntity> Get();
         bool PostBlock(UserDto user);

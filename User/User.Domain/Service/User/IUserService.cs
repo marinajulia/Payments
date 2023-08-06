@@ -4,7 +4,7 @@ namespace User.Domain.Service.User
 {
     public interface IUserService
     {
-        UserDto PostRegister(UserDto userDto);
+        Task<UserDto> PostRegister(UserDto userDto);
         bool Allow(int idUser);
         IEnumerable<UserDto> Get();
         UserDto GetById(int id);

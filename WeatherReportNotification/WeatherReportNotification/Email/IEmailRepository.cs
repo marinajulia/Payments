@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WeatherReportNotification.Email
 {
-    public interface IEmail
+    public interface IEmailRepository
     {
+        public void teste();
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using WeatherReport.Domain.Service.WeatherReport;
-using WeatherReport.Domain.Service.WeatherReport.Entities;
 
 namespace WeatherReport.Api.Controllers.WeatherReport
 {
@@ -33,4 +31,3 @@ namespace WeatherReport.Api.Controllers.WeatherReport
         }
     }
 }
-//4750

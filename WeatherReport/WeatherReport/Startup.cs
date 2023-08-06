@@ -22,17 +22,14 @@ namespace WeatherReport.Api
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
-            if (app.Environment.IsDevelopment())
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-            app.MapControllers();
+                endpoints.MapControllers();
+            });
         }
     }
 }

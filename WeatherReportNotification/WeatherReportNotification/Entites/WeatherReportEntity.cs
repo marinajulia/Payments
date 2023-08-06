@@ -1,4 +1,4 @@
-﻿namespace WeatherReportNotification.WeatherReport
+﻿namespace WeatherReportNotification.Entites
 {
     public class WeatherReportEntity
     {

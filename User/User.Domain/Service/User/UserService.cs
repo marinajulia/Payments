@@ -33,26 +33,26 @@ namespace User.Domain.Service.User
             return true;
         }
 
-        public UserDto PostRegister(UserDto userDto)
+        public async Task<UserDto> PostRegister(UserDto userDto)
         {
             if (string.IsNullOrEmpty(userDto.Name))
-                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.FieldNameEmpty));
+                return await _notification.AddWithReturn<Task<UserDto>>(ConfigureEnum.GetEnumDescription(UserEnum.FieldNameEmpty));
 
             if (string.IsNullOrEmpty(userDto.Email))
-                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.FieldEmailEmpty));
+                return await _notification.AddWithReturn<Task<UserDto>>(ConfigureEnum.GetEnumDescription(UserEnum.FieldEmailEmpty));
 
             if (string.IsNullOrEmpty(userDto.Password))
-                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.FieldPasswordEmpty));
+                return await _notification.AddWithReturn<Task<UserDto>>(ConfigureEnum.GetEnumDescription(UserEnum.FieldPasswordEmpty));
 
             if (userDto.IdCity < 0)
-                return _notification.AddWithReturn<UserDto>(ConfigureEnum.GetEnumDescription(UserEnum.FieldCityEmpty));
+                return await _notification.AddWithReturn<Task<UserDto>>(ConfigureEnum.GetEnumDescription(UserEnum.FieldCityEmpty));
 
             userDto.UserProfile = UserProfileEnum.user;
             //conferir de já está cadastrado
 
             var userEntity = _mapper.Map<UserEntity>(userDto);
 
-            var userPost = _userRepository.PostRegister(userEntity);
+            var userPost = await _userRepository.PostRegister(userEntity);
 
             var userDtoModel = _mapper.Map<UserDto>(userPost);
 

@@ -24,14 +24,16 @@ namespace User.Api.Controllers.User
         }
 
         [HttpPost]
-        public IActionResult Post(UserDto user)
+        public async Task<bool> Post(UserDto user)
         {
-            var response = _userService.PostRegister(user);
+            var response = await _userService.PostRegister(user);
 
-            if (response == null)
-                return BadRequest(_notification.GetNotifications());
+            if (response == null) return false;
+            return true;
+            //if (response == null)
+            //    return await BadRequest(_notification.GetNotifications());
 
-            return Ok(response);
+            //return Ok(response);
         }
 
         [HttpGet]

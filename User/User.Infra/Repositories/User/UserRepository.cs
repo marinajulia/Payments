@@ -47,14 +47,14 @@ namespace User.Infra.Repositories.User
             throw new NotImplementedException();
         }
 
-        public UserEntity PostRegister(UserEntity user)
+        public async Task<UserEntity> PostRegister(UserEntity user)
         {
             using (var context = new ApplicationContext())
             {
-                user.Password = PasswordService.Encrypt(user.Password);
+                //user.Password = PasswordService.Encrypt(user.Password);
 
                 context.User.Add(user);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return user;
             }

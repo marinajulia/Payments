@@ -7,7 +7,7 @@ namespace User.Infra.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=MARINA\SQLEXPRESS;Initial Catalog=Alunos;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"Data Source=user-weather-report-service.database.windows.net;Initial Catalog=user-database;Integrated Security=False; User ID=Marina;Password=julia24MAISA");
         }
         public DbSet<UserEntity> User { get; set; }
     }
